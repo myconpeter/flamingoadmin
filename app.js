@@ -34,14 +34,21 @@ require('./config/passport')
 
 // mongoose connection
 
-mongoose.connect('mongodb://localhost/flamingo', {
-   useNewUrlParser: true,
-   useUnifiedTopology: true,
+mongoose.connect('mongodb+srv://mycon:michealpeter@cluster0.sjfe1.mongodb.net/flamingo?retryWrites=true&w=majority', {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
   useFindAndModify: false,
-   useCreateIndex: true
- })
- .then(() => console.log('connected to db from express'))
-.catch((err)=> console.log(err)); 
+  useCreateIndex: true
+});
+
+// mongoose.connect('mongodb://localhost/flamingo', {
+//    useNewUrlParser: true,
+//    useUnifiedTopology: true,
+//   useFindAndModify: false,
+//    useCreateIndex: true
+//  })
+//  .then(() => console.log('connected to db from express'))
+// .catch((err)=> console.log(err)); 
 
 
 //EJS
