@@ -34,21 +34,14 @@ require('./config/passport')
 
 // mongoose connection
 
-mongoose.connect('mongodb+srv://flamingo:michealpeter@cluster0.pa829.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', {
+mongoose.connect('mongodb+srv://flamingo:michealisaman@cluster0.hknyx.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
-//   useFindAndModify: false,
-//   useCreateIndex: true
+  useFindAndModify: false,
+  useCreateIndex: true
 });
 
-// mongoose.connect('mongo "mongodb+srv://cluster0.pa829.mongodb.net/myFirstDatabase" --username flamingo', {
-//   useNewUrlParser: true,
-//   useUnifiedTopology: true,
-//  useFindAndModify: false,
-//    useCreateIndex: true
-//   });
-//  .then(() => console.log('connected to db from express'))
-// .catch((err)=> console.log(err)); 
+
 
 
 // mongoose.connect('mongodb://localhost/flamingo', {
@@ -282,14 +275,14 @@ app.post('/transfer', (req, res)=>{
                    })
 
 
-                // res.send('processing')
-                // if the email is not i database return error
-                // find the admin and updata it total amount - amount
-                // find the user and add the total amount
-                //if succeful send transfer succeful
-                //
             }
         })
+
+
+
+app.get('/withdraws', (req, res)=>{
+    res.render('withdrawals')
+})
         
 
 
