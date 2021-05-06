@@ -1,5 +1,4 @@
 <%- include("./partials/loginhead"); %>
-<%- include ('./partials/messages') %>
 
 <form action="/adminlogin" method="POST">
 
@@ -14,6 +13,8 @@
 
                         Admin Log In
 					</span>
+					<%- include ('./partials/messages') %>
+
 
 					<div class="wrap-input100 validate-input" data-validate = "Valid Admin-Username is required: abc@xyz.com">
 						<input class="input100" type="email" name="email" placeholder="Admin-Email">
