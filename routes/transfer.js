@@ -52,7 +52,7 @@ router.post('/transfer', ensureAuthenticated, (req, res)=>{
                                     if (err) {
                                         console.log(err)
                                     } else {
-                                     req.flash('success_msg' , 'Successfully transfered ' + amount + ' to ' + userEmail);
+                                        req.flash('success_msg', 'Successfully transfered ' + '₦' + amount + ' to ' + userEmail);
                                       res.redirect('/');
                                     }
                                 })

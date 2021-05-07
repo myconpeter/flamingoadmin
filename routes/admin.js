@@ -5,11 +5,11 @@ const bcrypt = require('bcrypt');
 
 const {ensureAuthenticated} = require('../config/auth'); 
 
-router.get('/admincreate',  ensureAuthenticated, (req, res)=>{
+router.get('/admincreate', (req, res)=>{
     res.render('admincreate');
 });
 
-router.post('/admincreate', ensureAuthenticated,(req,res)=>{
+router.post('/admincreate', (req,res)=>{
     const {email, password,transferAmount} = req.body;
     let errors = [];
     if(!email || !password || !transferAmount) {

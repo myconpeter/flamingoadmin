@@ -12,21 +12,24 @@ const PORT  = process.env.PORT || 4000;
 require('./config/passport');
 
 // mongoose connection
-// mongoose.connect('mongodb+srv://flamingo:michealisaman@cluster0.hknyx.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', {
-//   useNewUrlParser: true,
-//   useUnifiedTopology: true,
-//   useFindAndModify: false,
-//   useCreateIndex: true
-// });
-
-mongoose.connect('mongodb://localhost/flamingo', {
-   useNewUrlParser: true,
-   useUnifiedTopology: true,
+mongoose.connect('mongodb+srv://flamingo:michealisaman@cluster0.hknyx.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
   useFindAndModify: false,
-   useCreateIndex: true
- })
- .then(() => console.log('connected to db from express'))
+  useCreateIndex: true
+})
+.then(() => console.log('connected to db from express'))
 .catch((err)=> console.log(err)); 
+
+// mongoose.connect('mongodb://localhost/flamingo', {
+//    useNewUrlParser: true,
+//    useUnifiedTopology: true,
+//   useFindAndModify: false,
+//    useCreateIndex: true
+//  })
+//  .then(() => console.log('connected to db from express'))
+// .catch((err)=> console.log(err)); 
+
 
 const indexRoutes = require("./routes/index");
 const transferRoutes = require("./routes/transfer");
