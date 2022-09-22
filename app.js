@@ -24,7 +24,7 @@ const methodOverride = require("method-override");
 const flash = require("connect-flash");
 
 
-const PORT  = process.env.PORT || 4000;
+const PORT  = process.env.PORT || 8080;
 
 
 //passport config:
@@ -34,12 +34,12 @@ require('./config/passport')
 
 // mongoose connection
 
-mongoose.connect('mongodb+srv://flamingo:michealpeter@cluster0.pa829.mongodb.net/flamingo?retryWrites=true&w=majority', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
+// mongoose.connect('mongodb+srv://flamingo:michealpeter@cluster0.pa829.mongodb.net/flamingo?retryWrites=true&w=majority', {
+//   useNewUrlParser: true,
+//   useUnifiedTopology: true,
 //   useFindAndModify: false,
 //   useCreateIndex: true
-});
+//});
 
 // mongoose.connect('mongo "mongodb+srv://cluster0.pa829.mongodb.net/myFirstDatabase" --username flamingo', {
 //   useNewUrlParser: true,
@@ -51,14 +51,16 @@ mongoose.connect('mongodb+srv://flamingo:michealpeter@cluster0.pa829.mongodb.net
 // .catch((err)=> console.log(err)); 
 
 
-// mongoose.connect('mongodb://localhost/flamingo', {
-//    useNewUrlParser: true,
-//    useUnifiedTopology: true,
-//   useFindAndModify: false,
-//    useCreateIndex: true
-//  })
-//  .then(() => console.log('connected to db from express'))
-// .catch((err)=> console.log(err)); 
+//local connection
+mongoose.connect('mongodb://localhost/flamingo', {
+   useNewUrlParser: true,
+   useUnifiedTopology: true,
+  useFindAndModify: false,
+   useCreateIndex: true
+ })
+ .then(() => console.log('connected to db'))
+.catch((err)=> console.log(err)); 
+
 
 
 //EJS
