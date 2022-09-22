@@ -1,11 +1,7 @@
-const User = require('../models/user');
 const Admin = require('../models/Admin');
-
 const LocalStrategy = require('passport-local').Strategy;
 const bcrypt = require('bcrypt');
-const passport = require('passport')
-
-
+const passport = require('passport');
 
 passport.use('userAdmin', new LocalStrategy
             ({usernameField: 'email'},(email,password,done)=>{
@@ -21,7 +17,7 @@ passport.use('userAdmin', new LocalStrategy
                     if(isMatch){
                         return done(null,user);
                     } else{
-                        return done(null,false,{message: 'password incorrect For admin'});
+                        return done(null,false,{message: 'Incorrect Password!!!'});
                     }
                 })
             })
